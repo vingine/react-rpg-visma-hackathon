@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import LayoutContainer from "./components/LayoutContainer";
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <h1>{this.props.message}</h1>
-            </div>
+            <LayoutContainer />
         );
     }
 }
