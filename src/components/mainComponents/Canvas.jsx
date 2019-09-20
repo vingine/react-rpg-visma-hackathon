@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Backdrop from "../Backdrop";
 import {viewportWidth, viewportHeight} from "../../utils/constants";
-import Person from "../characters/Player";
+import PlayerContainer from "../../containers/PlayerContainer";
 
 
 class Canvas extends Component {
@@ -19,7 +19,7 @@ class Canvas extends Component {
                 style={this.style}
             >
                 <Backdrop />
-                <Person />
+                <PlayerContainer />
             </svg>
         );
     }
