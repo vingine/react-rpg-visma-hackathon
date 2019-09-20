@@ -1,5 +1,6 @@
 .target-menu-base {
     background-color: red;
-    height: 100rem;
+    height: 12rem;
     width: 100%;
+    display: flex;
 }

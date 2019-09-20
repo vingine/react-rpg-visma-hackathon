@@ -6,8 +6,6 @@ import TargetMenu from "./TargetMenu";
 
 class LayoutContainer extends Component {
 
-    size
-
     shouldComponentUpdate() {
         return false;
     }

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
+import Backdrop from "../Backdrop";
+import {viewportWidth, viewportHeight} from "../../utils/constants";
+import Person from "../characters/Player";
+
 
 class Canvas extends Component {
-    viewBox = [0, 0, 1600, 900];
+    viewBox = [0, 0, viewportWidth, viewportHeight];
     style = {
         border: '1px black solid'
-    };
-    center = {
-        x: '16',
-        y: '16'
     };
 
     render() {
@@ -18,7 +18,8 @@ class Canvas extends Component {
                 viewBox={this.viewBox}
                 style={this.style}
             >
-                <circle cx={this.center.x} cy={this.center.y} r={16} />
+                <Backdrop />
+                <Person />
             </svg>
         );
     }
