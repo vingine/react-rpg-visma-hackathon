@@ -1,5 +1,45 @@
 .statistics-menu-base {
-    background-color: blue;
+    background-color: lightgoldenrodyellow;
+    border: 5px black solid;
+    height: 99%;
+    width: 97%;
+}
+
+.statistics-menu-base > .vertical-container {
+    display: flex;
+    flex-flow: column nowrap;
     height: 100%;
+}
+
+.vertical-container > .container {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 5%;
     width: 100%;
+    align-content: baseline;
+}
+
+.vertical-container > .header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 15%;
+    width: 100%;
+}
+
+.header-container > .header {
+    font-size: 3vw;
+    text-align: center;
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+.container > .content-label {
+    font-size: 1.5vw;
+    padding-left: 1vw;
+}
+
+.container > .content {
+    font-size: 1.4vw;
+    position:absolute;
+    right: 1vw;
 }

@@ -27,7 +27,9 @@ export const initialMap = [
 ];
 
 export const tileMapping = {
-    0: 'wall',
+    WALL: 0,
+    EMPTY: 16,
+    PLAYER: 20/*,
     1: 'weapon',
     2: 'armor',
     3: 'potion',
@@ -44,62 +46,62 @@ export const tileMapping = {
     14: 'monster-special-4',
     15: 'final-boss',
     16: 'empty',
-    20: 'player'
+    20: 'player'*/
 };
 
 export const weapons = {
-    0: {
+    1: {
         'name': 'bludgeon',
         'attack': 1
     },
-    1: {
+    2: {
         'name': 'longsword',
         'attack': 2
     },
-    2: {
+    3: {
         'name': 'greatsword',
         'attack': 3
     },
-    3: {
+    4: {
         'name': 'enchanted dagger',
         'attack': 4
     },
-    4: {
+    5: {
         'name': 'enchanted longsword',
         'attack': 5
     },
-    5: {
+    6: {
         'name': 'enchanted greatsword',
         'attack': 6
     },
-    6: {
+    7: {
         'name': 'excalibur',
         'attack': 7
     }
 };
 
 export const armors = {
-    0: {
+    1: {
         'name': 'cloth',
         'defense': 0
     },
-    1: {
+    2: {
         'name': 'leather',
         'defense': 1
     },
-    2: {
+    3: {
         'name': 'bronze',
         'defense': 2
     },
-    3: {
+    4: {
         'name': 'iron',
         'defense': 3
     },
-    4: {
+    5: {
         'name': 'mythril',
         'defense': 4
     },
-    5: {
+    6: {
         'name': 'adamantium',
         'defense': 5
     }
@@ -157,7 +159,9 @@ export const enemystats = {
 };
 
 export const playerstats = {
-    'hp': 100,
+    'hp': 200,
     'attack': 1,
     'defense': 1
 };
+
+export const maxHp = 200;

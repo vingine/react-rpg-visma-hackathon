@@ -1,13 +1,18 @@
 import {MOVE_PLAYER} from "../utils/actionTypes";
-import {viewportWidth, viewportHeight} from "../utils/constants";
+import {initialMap, tileWidth, tileHeight, playerstats} from "../utils/constants";
 import movePlayer from "./movePlayer";
 
 const initialState = {
-    playerCoordinates: {
-        x: viewportWidth / 2,
-        y: viewportHeight / 2
+    playerStatistics: {
+        hp: playerstats.hp,
+        attack: playerstats.attack,
+        defense: playerstats.defense
     },
-    tilemap: [50][28]
+    playerCoordinates: {
+        x: 15*tileWidth,
+        y: 9*tileHeight
+    },
+    tilemap: initialMap
 };
 
 function reducer(state = initialState, action) {
