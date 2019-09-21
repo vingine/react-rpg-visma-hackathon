@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import './index.css';
 import reducer from "./reducers";
 import * as serviceWorker from './serviceWorker';
-import App from "./App";
+import Game from "./containers/Game";
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
@@ -16,7 +16,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Game />
     </Provider>,
     document.getElementById('root')
 );

@@ -1,46 +1,24 @@
 import {MOVE_PLAYER} from "../utils/actionTypes";
-import {viewportWidth, viewportHeight, tileWidth, tileHeight} from "../utils/constants";
+import {viewportWidth, viewportHeight} from "../utils/constants";
+import movePlayer from "./movePlayer";
 
 const initialState = {
     playerCoordinates: {
         x: viewportWidth / 2,
         y: viewportHeight / 2
-    }
+    },
+    tilemap: [
+
+    ]
 };
 
 function reducer(state = initialState, action) {
-    if (action.type === MOVE_PLAYER) {
-        if (action.payload.direction === 'UP') {
-            return Object.assign({}, state, {
-                playerCoordinates: {
-                    x: this.state.playerCoordinates.x,
-                    y: this.state.playerCoordinates.y - tileHeight
-                }
-            });
-        } else if (action.payload.direction === 'DOWN') {
-            return Object.assign({}, state, {
-                playerCoordinates: {
-                    x: this.state.playerCoordinates.x,
-                    y: this.state.playerCoordinates.y + tileHeight
-                }
-            });
-        } else if (action.payload.direction === 'LEFT') {
-            return Object.assign({}, state, {
-                playerCoordinates: {
-                    x: this.state.playerCoordinates.x - tileWidth,
-                    y: this.state.playerCoordinates.y
-                }
-            });
-        } else if (action.payload.direction === 'RIGHT') {
-            return Object.assign({}, state, {
-                playerCoordinates: {
-                    x: this.state.playerCoordinates.x + tileWidth,
-                    y: this.state.playerCoordinates.y
-                }
-            });
-        }
+    switch (action.type) {
+        case MOVE_PLAYER:
+            return movePlayer(state, action);
+        default:
+            return state;
     }
-    return state;
 }
 
 export default reducer;

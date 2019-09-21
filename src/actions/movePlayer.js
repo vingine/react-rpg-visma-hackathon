@@ -1,5 +1,5 @@
 import {MOVE_PLAYER} from "../utils/actionTypes";
 
-export function movePlayer (payload) {
+export const movePlayer = payload => {
     return {type: MOVE_PLAYER, payload};
-}
+};

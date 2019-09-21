@@ -9,17 +9,19 @@ const mapStateToProps = state => ({
     playerCoordinates: state.playerCoordinates
 });
 
-const Player = ({playerCoordinates}) => (
-    <svg>
-        <image
-            x={playerCoordinates.x}
-            y={playerCoordinates.y}
-            width={tileWidth}
-            height={tileHeight}
-            href={person}
-        />
-    </svg>
-);
+const Player = ({playerCoordinates}) => {
+    return (
+        <svg>
+            <image
+                x={playerCoordinates.x}
+                y={playerCoordinates.y}
+                width={tileWidth}
+                height={tileHeight}
+                href={person}
+            />
+        </svg>
+    );
+};
 
 Player.propTypes = {
     playerCoordinates: PropTypes.shape({
@@ -31,3 +33,4 @@ Player.propTypes = {
 const PlayerContainer = connect(mapStateToProps)(Player);
 
 export default PlayerContainer;
+
