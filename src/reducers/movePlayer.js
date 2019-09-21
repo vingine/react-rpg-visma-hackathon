@@ -44,6 +44,46 @@ function tryMovePlayerUp(state, currentCoords) {
                 })
             });
         }
+        case tileMapping.ARMOR: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x,
+                    y: state.playerCoordinates.y - tileHeight
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack,
+                    defense: state.playerStatistics.defense + 1
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y - 1) return row.map((col, index) => {
+                        if (index === currentCoords.x) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.SWORD: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x,
+                    y: state.playerCoordinates.y - tileHeight
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack + 1,
+                    defense: state.playerStatistics.defense
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y - 1) return row.map((col, index) => {
+                        if (index === currentCoords.x) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
         default:
             return state;
     }
@@ -64,6 +104,46 @@ function tryMovePlayerDown(state, currentCoords) {
                 playerCoordinates: {
                     x: state.playerCoordinates.x,
                     y: state.playerCoordinates.y + tileHeight
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y + 1) return row.map((col, index) => {
+                        if (index === currentCoords.x) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.ARMOR: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x,
+                    y: state.playerCoordinates.y + tileHeight
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack,
+                    defense: state.playerStatistics.defense + 1
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y + 1) return row.map((col, index) => {
+                        if (index === currentCoords.x) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.SWORD: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x,
+                    y: state.playerCoordinates.y + tileHeight
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack + 1,
+                    defense: state.playerStatistics.defense
                 },
                 tilemap: state.tilemap.map((row, index) => {
                     if (index === currentCoords.y + 1) return row.map((col, index) => {
@@ -104,6 +184,46 @@ function tryMovePlayerLeft(state, currentCoords) {
                 })
             });
         }
+        case tileMapping.ARMOR: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x - tileWidth,
+                    y: state.playerCoordinates.y
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack,
+                    defense: state.playerStatistics.defense + 1
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y) return row.map((col, index) => {
+                        if (index === currentCoords.x - 1) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.SWORD: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x - tileWidth,
+                    y: state.playerCoordinates.y
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack + 1,
+                    defense: state.playerStatistics.defense
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y) return row.map((col, index) => {
+                        if (index === currentCoords.x - 1) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
         default:
             return state;
     }
@@ -124,6 +244,46 @@ function tryMovePlayerRight(state, currentCoords) {
                 playerCoordinates: {
                     x: state.playerCoordinates.x + tileWidth,
                     y: state.playerCoordinates.y
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y) return row.map((col, index) => {
+                        if (index === currentCoords.x + 1) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.ARMOR: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x + tileWidth,
+                    y: state.playerCoordinates.y
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack,
+                    defense: state.playerStatistics.defense + 1
+                },
+                tilemap: state.tilemap.map((row, index) => {
+                    if (index === currentCoords.y) return row.map((col, index) => {
+                        if (index === currentCoords.x + 1) return tileMapping.EMPTY;
+                        return col;
+                    });
+                    return row;
+                })
+            });
+        }
+        case tileMapping.SWORD: {
+            return Object.assign({}, state, {
+                playerCoordinates: {
+                    x: state.playerCoordinates.x + tileWidth,
+                    y: state.playerCoordinates.y
+                },
+                playerStatistics: {
+                    hp: state.playerStatistics.hp,
+                    attack: state.playerStatistics.attack + 1,
+                    defense: state.playerStatistics.defense
                 },
                 tilemap: state.tilemap.map((row, index) => {
                     if (index === currentCoords.y) return row.map((col, index) => {
