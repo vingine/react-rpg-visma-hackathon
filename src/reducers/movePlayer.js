@@ -20,6 +20,8 @@ function movePlayer(state, action) {
 function tryMovePlayerUp(state, currentCoords) {
     switch (state.tilemap[currentCoords.y-1][currentCoords.x]) {
         // Allow move
+        case tileMapping.MONSTER:
+        case tileMapping.POTION:
         case tileMapping.EMPTY: {
             return Object.assign({}, state, {
                 playerCoordinates: {
@@ -91,6 +93,8 @@ function tryMovePlayerUp(state, currentCoords) {
 
 function tryMovePlayerDown(state, currentCoords) {
     switch (state.tilemap[currentCoords.y+1][currentCoords.x]) {
+        case tileMapping.MONSTER:
+        case tileMapping.POTION:
         case tileMapping.EMPTY: {
             return Object.assign({}, state, {
                 playerCoordinates: {
@@ -161,6 +165,8 @@ function tryMovePlayerDown(state, currentCoords) {
 
 function tryMovePlayerLeft(state, currentCoords) {
     switch (state.tilemap[currentCoords.y][currentCoords.x-1]) {
+        case tileMapping.MONSTER:
+        case tileMapping.POTION:
         case tileMapping.EMPTY: {
             return Object.assign({}, state, {
                 playerCoordinates: {
@@ -231,6 +237,8 @@ function tryMovePlayerLeft(state, currentCoords) {
 
 function tryMovePlayerRight(state, currentCoords) {
     switch (state.tilemap[currentCoords.y][currentCoords.x+1]) {
+        case tileMapping.MONSTER:
+        case tileMapping.POTION:
         case tileMapping.EMPTY: {
             return Object.assign({}, state, {
                 playerCoordinates: {

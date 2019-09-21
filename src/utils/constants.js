@@ -67,15 +67,15 @@ export const weapons = {
         'attack': 3
     },
     4: {
-        'name': 'enchanted dagger',
+        'name': 'ench. dagger',
         'attack': 4
     },
     5: {
-        'name': 'enchanted longsword',
+        'name': 'ench. lngsrd',
         'attack': 5
     },
     6: {
-        'name': 'enchanted greatsword',
+        'name': 'ench. grtsrd',
         'attack': 6
     },
     7: {
