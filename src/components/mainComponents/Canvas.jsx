@@ -93,12 +93,10 @@ class Canvas extends Component {
     constructor(props) {
         super(props);
         let elements = this.initializeTiles(props.tilemap);
-        //console.log("con: ", elements);
         this.state = {elements: elements};
     }
 
     render() {
-        /*let backdrop = ();<PlayerCanvas />*/
         return (
             <svg
                 id="game-canvas"
