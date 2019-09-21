@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import LayoutContainer from "./components/mainComponents/LayoutContainer";
-import {MOVE_PLAYER} from "./utils/actionTypes";
 
 class App extends Component {
 

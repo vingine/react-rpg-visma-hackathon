@@ -7,9 +7,7 @@ const initialState = {
         x: viewportWidth / 2,
         y: viewportHeight / 2
     },
-    tilemap: [
-
-    ]
+    tilemap: [50][28]
 };
 
 function reducer(state = initialState, action) {
