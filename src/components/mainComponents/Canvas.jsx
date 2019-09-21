@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {viewportWidth, viewportHeight, tileWidth, tileHeight, tileMapping} from "../../utils/constants";
 import Backdrop from "../Backdrop";
-import PlayerCanvas from "../Player";
+import PlayerCanvas from "../tiles/Player";
 import {connect} from "react-redux";
-import Wall from "../Wall";
+import SimpleTile from "../tiles/SimpleTile";
 
 const mapStateToProps = state => ({
     tilemap: state.tilemap
@@ -23,18 +23,56 @@ class Canvas extends Component {
             for (let col = 0; col < tileRow.length; col++) {
                 switch (tileRow[col]) {
                     case tileMapping.WALL: {
-                        console.log("found WALL");
                         let x, y, key, coords;
                         x = col*tileWidth;
                         y = row*tileHeight;
                         key = row+'-'+col;
                         coords = {'x': x, 'y': y};
-                        elements.push(<Wall coordinates={coords} key={key}/>);
+                        elements.push(<SimpleTile coordinates={coords} key={key} tileType={'wall'}/>);
+                        break;
+                    }
+
+                    case tileMapping.MONSTER: {
+                        let x, y, key, coords;
+                        x = col*tileWidth;
+                        y = row*tileHeight;
+                        key = row+'-'+col;
+                        coords = {'x': x, 'y': y};
+                        elements.push(<SimpleTile coordinates={coords} key={key} tileType={'monster'}/>);
+                        break;
+                    }
+
+                    case tileMapping.ARMOR: {
+                        let x, y, key, coords;
+                        x = col*tileWidth;
+                        y = row*tileHeight;
+                        key = row+'-'+col;
+                        coords = {'x': x, 'y': y};
+                        elements.push(<SimpleTile coordinates={coords} key={key} tileType={'armor'}/>);
+                        break;
+                    }
+
+                    case tileMapping.SWORD: {
+                        let x, y, key, coords;
+                        x = col*tileWidth;
+                        y = row*tileHeight;
+                        key = row+'-'+col;
+                        coords = {'x': x, 'y': y};
+                        elements.push(<SimpleTile coordinates={coords} key={key} tileType={'sword'}/>);
+                        break;
+                    }
+
+                    case tileMapping.POTION: {
+                        let x, y, key, coords;
+                        x = col*tileWidth;
+                        y = row*tileHeight;
+                        key = row+'-'+col;
+                        coords = {'x': x, 'y': y};
+                        elements.push(<SimpleTile coordinates={coords} key={key} tileType={'potion'}/>);
                         break;
                     }
 
                     case tileMapping.PLAYER: {
-                        console.log("found PLAYER");
                         let x, y, key, coords;
                         x = col*tileWidth;
                         y = row*tileHeight;

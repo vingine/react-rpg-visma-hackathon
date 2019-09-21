@@ -2,8 +2,8 @@ import {connect} from 'react-redux';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import person from '../assets/game/person.svg';
-import {tileHeight, tileWidth} from "../utils/constants";
+import person from '../../assets/game/person.svg';
+import {tileHeight, tileWidth} from "../../utils/constants";
 
 const mapStateToProps = state => ({
     playerCoordinates: state.playerCoordinates
